@@ -15,5 +15,6 @@ public class Main {
         System.out.println(object.getS());
         System.out.println(object.getI());
         System.out.println(object.getF());
+        System.out.println(object.isB());
     }
 }

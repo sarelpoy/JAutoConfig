@@ -4,7 +4,7 @@ public class ExampleObject {
     String s;
     int i;
     float f;
-
+    boolean b;
     public String getS() {
         return s;
     }
@@ -27,5 +27,13 @@ public class ExampleObject {
 
     public void setF(float f) {
         this.f = f;
+    }
+
+    public boolean isB() {
+        return b;
+    }
+
+    public void setB(boolean b) {
+        this.b = b;
     }
 }
