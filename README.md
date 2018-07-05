@@ -1,4 +1,4 @@
-# Jconfig
+# JAutoConfig
 use Java reflection to read a config file and update the object without the need to creating a match for every new variable.
 this is a project with an example. 
 the base idea is using the convention of naming setters with "setVarName" so we can use that to guess in an informed manner what is a variable setting function name and invoke it. 
