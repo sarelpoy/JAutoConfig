@@ -22,7 +22,7 @@ public class Config {
             {
                 String myProperty=props.getProperty(PropertyName);
                 try {
-                    if(PropertyFullName.toLowerCase().contains("boolean")){
+                    if(PropertyFullName.toLowerCase().split(" ")[0].equals("boolean")){
                         Method setMethod = object.getClass().getMethod(setMethodName,boolean.class);
                         if(String.valueOf(myProperty).equals("1")||Boolean.valueOf(myProperty)){
                             setMethod.invoke(object,true);
