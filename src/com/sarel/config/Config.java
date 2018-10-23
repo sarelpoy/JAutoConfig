@@ -15,7 +15,6 @@ public class Config {
         props.load(input);
 
         for (int i=0;i<object.getClass().getDeclaredFields().length;i++) {
-            String PropertyFullName =object.getClass().getDeclaredFields()[i].toString();
             String PropertyName =object.getClass().getDeclaredFields()[i].getName();
             String setMethodName="set"+PropertyName.substring(0,1).toUpperCase()+PropertyName.substring(1);
             if (props.getProperty(PropertyName) !=null)
@@ -31,7 +30,8 @@ public class Config {
                             setMethod.invoke(object,true);
                         }else {
                             setMethod.invoke(object,false);
-                        }                    }
+                        }
+                    }
                     else if(type.equals(String.class)){
                         setMethod.invoke(object,new Object[] {myProperty});
                     }
