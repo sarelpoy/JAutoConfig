@@ -16,7 +16,7 @@ public class Config {
 
         for (int i=0;i<object.getClass().getDeclaredFields().length;i++) {
             String PropertyFullName =object.getClass().getDeclaredFields()[i].toString();
-            String PropertyName =object.getClass().getDeclaredFields()[i].toString().substring(PropertyFullName.lastIndexOf(".")+1);
+            String PropertyName =object.getClass().getDeclaredFields()[i].getName();
             String setMethodName="set"+PropertyName.substring(0,1).toUpperCase()+PropertyName.substring(1);
             if (props.getProperty(PropertyName) !=null)
             {
