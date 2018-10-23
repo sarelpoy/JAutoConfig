@@ -1,4 +1,4 @@
 s=example string
-b=1
 i=1
 f=1.0
+b=1

@@ -22,22 +22,22 @@ public class Config {
             {
                 String myProperty=props.getProperty(PropertyName);
                 try {
-                    if(PropertyFullName.toLowerCase().split(" ")[0].equals("boolean")){
+                    if(object.getClass().getDeclaredFields()[i].getType().equals(boolean.class)){
                         Method setMethod = object.getClass().getMethod(setMethodName,boolean.class);
                         if(String.valueOf(myProperty).equals("1")||Boolean.valueOf(myProperty)){
                             setMethod.invoke(object,true);
                         }else {
                             setMethod.invoke(object,false);
                         }                    }
-                    else if(PropertyFullName.toLowerCase().split(" ")[0].equals("java.lang.string")){
+                    else if(object.getClass().getDeclaredFields()[i].getType().equals(String.class)){
                         Method setMethod = object.getClass().getMethod(setMethodName,String.class);
                         setMethod.invoke(object,new Object[] {myProperty});
                     }
-                    else if(PropertyFullName.toLowerCase().split(" ")[0].equals("float")){
+                    else if(object.getClass().getDeclaredFields()[i].getType().equals(float.class)){
                         Method setMethod = object.getClass().getMethod(setMethodName,float.class);
                         setMethod.invoke(object,new Object[] {Float.valueOf(myProperty)});
                     }
-                    else if(PropertyFullName.toLowerCase().split(" ")[0].equals("int")){
+                    else if(object.getClass().getDeclaredFields()[i].getType().equals(int.class)){
                         Method setMethod = object.getClass().getMethod(setMethodName,int.class);
                         setMethod.invoke(object,new Object[] {Integer.valueOf(myProperty)});
                     }

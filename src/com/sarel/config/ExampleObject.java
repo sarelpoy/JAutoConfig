@@ -5,6 +5,7 @@ public class ExampleObject {
     int i;
     float f;
     boolean b;
+
     public String getS() {
         return s;
     }
